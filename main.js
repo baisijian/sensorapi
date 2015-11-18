@@ -8,7 +8,9 @@ function respond(req, res, next) {
 
 function getData(req, res, next) {
     var jsonStr = {
-        name: 'hello'
+        data1: '0.98',
+        data2: '0.28',
+        data3: '0.33'
     };
     //var responseString = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
     res.send(jsonStr);
