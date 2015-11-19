@@ -1,8 +1,9 @@
-var serialport = require('serialport');
-var SerialPort = serialport.SerialPort;
-var ser = new SerialPort('/dev/ttyACM0', {
-parser: serialport.parsers.readline('\n'),
-    baudrate: 9600
-});
+var fs = require('fs');
 
-module.exports = ser;
+module.exports = function() {
+    getTemp: function() {
+	///sys/bus / w1 / devices / 28 - 0215536 f5dff / w1_slave
+        return "123";
+    },
+}
+
