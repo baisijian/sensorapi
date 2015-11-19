@@ -1,9 +1,9 @@
 var fs = require('fs');
 
-module.exports = function() {
+module.exports = {
     getTemp: function() {
-	///sys/bus / w1 / devices / 28 - 0215536 f5dff / w1_slave
-        return "123";
-    },
-}
+        var data = fs.readFileSync('/sys/bus/w1/devices/28-0215536f5dff/w1_slave');
 
+        return data;
+    }
+};
