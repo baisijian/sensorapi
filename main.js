@@ -1,5 +1,14 @@
 var restify = require('restify'),
-    fs = require('fs');
+    fs = require('fs'),
+    ser = require('./temperature.js'),
+    currentTemperature = "0";
+
+ser.on('open', function() {
+    ser.on('data', function(data) {
+        currentTemperature = data.toString();
+        console.log(data.toString());
+    })
+});
 
 function respond(req, res, next) {
     res.send('hello ' + req.params.name);
@@ -8,7 +17,7 @@ function respond(req, res, next) {
 
 function getData(req, res, next) {
     var jsonStr = {
-        data1: '0.98',
+        data1: currentTemperature,
         data2: '0.28',
         data3: '0.33'
     };

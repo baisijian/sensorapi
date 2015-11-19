@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/baisijian/sensorapi#readme",
   "dependencies": {
-    "restify": "^4.0.3"
+    "restify": "^4.0.3",
+    "serialport": "^2.0.5"
   }
 }
