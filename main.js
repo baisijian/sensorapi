@@ -6,7 +6,7 @@ var restify = require('restify'),
 ser.on('open', function() {
     ser.on('data', function(data) {
         currentTemperature = data.toString();
-        console.log(data.toString());
+        //console.log(data.toString());
     })
 });
 
@@ -17,9 +17,9 @@ function respond(req, res, next) {
 
 function getData(req, res, next) {
     var jsonStr = {
-        data1: currentTemperature,
-        data2: '0.28',
-        data3: '0.33'
+        temperature: currentTemperature,
+        data2: '0',
+        data3: '0'
     };
     //var responseString = JSON.parse(fs.readFileSync('./data.json', 'utf8'));
     res.send(jsonStr);
